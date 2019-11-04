@@ -1,36 +1,35 @@
 package com.zipcodewilmington.assessment2.part2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ArrayUtility {
     public Integer[] merge(Integer[] array1, Integer[] array2) {
+    ArrayList<Integer> merged = new ArrayList<>();
 
-        return null;
+         merged.addAll(Arrays.asList(array1));
+         merged.addAll(Arrays.asList(array2));
+
+        return merged.toArray(new Integer[0]);
     }
 
     public Integer[] rotate(Integer[] array, Integer index) {
+        ArrayList<Integer> firstHalf = new ArrayList<>();
+        for (int i = 0 ; i < array.length -1 ; i++){
+            firstHalf.add(array[index + i]);
+        }
 
-//        Integer backCounter = 1;
-//        Integer[] temp = new Integer[backCounter];
-//        for (int j = 0; j < 1; j++) {
-//            if (array[index - backCounter] >= 0) {
-//                array[index - backCounter] = temp[j];
-//                backCounter++;
-//            }
-//        }
-//        System.out.println(temp.toString());
-//
-//        Integer[] rotated = new Integer[array.length];
-//
-//        for (int i = 0; i < array.length; i++) {
-//            Integer counter = 0;
-//            rotated[counter] = array[index + counter];
-//            counter++;
-//        }
-//        rotated[rotated.length] = temp[0];
-//
-//        return rotated;
-        return null;
+        ArrayList<Integer> lastHalf = new ArrayList<>();
+        for (int j= 0 ; j < array.length ; j++){
+            if(array[j]!= index){
+            lastHalf.add(array[j]);
+            }
+            else break;
+        }
+        firstHalf.addAll(lastHalf);
+        System.out.println(firstHalf);
+
+        return firstHalf.toArray(new Integer[0]);
     }
 
     public Integer countOccurrence(Integer[] array1, Integer[] array2, Integer valueToEvaluate) {
