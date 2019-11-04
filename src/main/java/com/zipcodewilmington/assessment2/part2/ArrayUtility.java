@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment2.part2;
 
+import java.util.Arrays;
+
 public class ArrayUtility {
     public Integer[] merge(Integer[] array1, Integer[] array2) {
 
@@ -34,15 +36,15 @@ public class ArrayUtility {
     public Integer countOccurrence(Integer[] array1, Integer[] array2, Integer valueToEvaluate) {
 
         Integer counter = 0;
-        for (int i = 0 ; i < array1.length ; i ++) {
+        for (int i = 0; i < array1.length; i++) {
             if (array1[i] == valueToEvaluate) {
                 counter++;
             }
         }
-        for (int j = 0 ; j <array2.length ; j++){
+        for (int j = 0; j < array2.length; j++) {
 
-            if (array2[j] ==valueToEvaluate){
-                counter ++;
+            if (array2[j] == valueToEvaluate) {
+                counter++;
             }
         }
 
@@ -50,7 +52,20 @@ public class ArrayUtility {
     }
 
     public Integer mostCommon(Integer[] array) {
+        Arrays.sort(array);
+        int maxCount = 1;
+        int numberChecked = array[0];
+        int currentCount = 1;
+        for (int i = 0; i < array.length-1; i++) {
+            if (array[i] == array[i + 1]) {
+                currentCount++;
+            } else if (currentCount > maxCount) {
+                maxCount = currentCount;
+                numberChecked = array[i + 1];
+            }
 
-        return null;
+        }
+        return numberChecked;
+
     }
 }
