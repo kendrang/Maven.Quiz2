@@ -16,17 +16,20 @@ public class IntegerArrayUtilities {
             for (int j = 0 ; j < answer.length; j ++) {
 
                 answer[j] = start ++;
-
         }
 
         return answer;
     }
 
     public Integer getSumOfFirstTwo(Integer[] array) {
-        return null;
+        Integer answer =0;
+       answer = array[0] + array[1];
+        return answer;
     }
 
     public Integer getProductOfFirstTwo(Integer[] array) {
-        return null;
+        Integer answer =0;
+        answer = array[array.length-1] * array[array.length-2];
+        return answer;
     }
 }
