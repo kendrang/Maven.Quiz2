@@ -31,5 +31,5 @@ public class IntegerArrayUtilities {
         Integer answer =0;
         answer = array[array.length-1] * array[array.length-2];
         return answer;
-    }
+    } // they meant last two
 }
