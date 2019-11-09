@@ -15,13 +15,13 @@ public class ArrayUtility {
 
     public Integer[] rotate(Integer[] array, Integer index) {
         ArrayList<Integer> firstHalf = new ArrayList<>();
-        for (int i = 0 ; i < array.length -1 ; i++){
+        for (int i = 0 ; index + i < array.length; i++){
             firstHalf.add(array[index + i]);
         }
 
         ArrayList<Integer> lastHalf = new ArrayList<>();
         for (int j= 0 ; j < array.length ; j++){
-            if(array[j]!= index){
+            if(array[j]!= array[index]){
             lastHalf.add(array[j]);
             }
             else break;

@@ -39,8 +39,6 @@ public class Router {
     @Override
     public String toString(){
         String result ="";
-//       return  routerThing.toString().replace("{","")
-//               .replace("}","").replace("=","")+"\n";
         for (Map.Entry routerEntry : routerThing.entrySet()){
            result += new StringBuilder().append(routerEntry.toString()).append("\n").toString().replace("=","");
         }
